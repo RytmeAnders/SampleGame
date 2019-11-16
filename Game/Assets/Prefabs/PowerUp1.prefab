@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4136cb967b1a685468428d4b1197c73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenDuration: 10
+  Duration: 10
   pickUpEffect: {fileID: 0}
-  green: {fileID: 0}
+  effectMaterial: {fileID: 2100000, guid: 7c6f8f97eda9a6649a7f63104cbbd210, type: 2}
   defaultPlayer: {fileID: 2100000, guid: e64a51e59d590dd4c8048cd801422936, type: 2}

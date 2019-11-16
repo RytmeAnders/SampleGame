@@ -46,7 +46,6 @@ public class SpawnManager : MonoBehaviour
             //Instantiate a power up within the size of the arena
             Instantiate(powerUps[currentPowerUp], new Vector3(spawnX, 1, spawnZ), Quaternion.identity);
 
-            print("X: " + spawnX + ", Z: " + spawnZ);
             //print("Spawning!");
             //print("Power Up: " + currentPowerUp);
             //print("Curren Time: " + currentTime); //For debugging to see the current interval

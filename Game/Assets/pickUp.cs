@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class pickUp : MonoBehaviour
 {
-    public float greenDuration;
+    public float Duration;
     public GameObject pickUpEffect;
-    public Material green;
+    public Material effectMaterial;
     public Material defaultPlayer;
 
     private void OnTriggerEnter(Collider other)
@@ -38,18 +38,20 @@ public class pickUp : MonoBehaviour
         GameObject effect = Instantiate(pickUpEffect, player.transform.position, Quaternion.identity);
         effect.transform.SetParent(player.transform);
 
-        player.GetComponent<Renderer>().material = green;
+        player.GetComponent<Renderer>().material = effectMaterial;
+        player.tag = "Effected";
 
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
-        yield return new WaitForSeconds(greenDuration);
+        yield return new WaitForSeconds(Duration);
 
         // When the effect ends
         playermovement.thrust /= 2;
-        Destroy(effect);
         player.GetComponent<Renderer>().material = defaultPlayer;
 
+        player.tag = "Player";
+        Destroy(effect);
         Destroy(gameObject);
     }
 
@@ -57,13 +59,20 @@ public class pickUp : MonoBehaviour
     {
         // When the effect kicks in
         player.transform.localScale *= 3;
+        player.GetComponent<Renderer>().material = effectMaterial;
+        player.tag = "Effected";
 
-        Destroy(gameObject);
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
 
-        yield return new WaitForSeconds(greenDuration);
+        yield return new WaitForSeconds(Duration);
 
         // When the effect ends
         player.transform.localScale /= 3;
+        player.GetComponent<Renderer>().material = defaultPlayer;
+
+        player.tag = "Player";
+        Destroy(gameObject);
 
     }
 }
