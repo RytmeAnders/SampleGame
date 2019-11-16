@@ -432,7 +432,6 @@ MonoBehaviour:
   powerUps:
   - {fileID: 982925181824539565, guid: 5a7f977a7e73123419302b12a3b3c7c3, type: 3}
   - {fileID: 7797823919033257101, guid: 955eeee27d7148a4badec480d69c2261, type: 3}
-  - {fileID: 4177614601639220117, guid: 1b43044c6e9a5c1498dffa0d2f7e3508, type: 3}
   minTime: 10
   maxTime: 20
   floor: {fileID: 379672947}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9167696300275355693}
   m_Layer: 0
   m_Name: PowerUp2
-  m_TagString: Untagged
+  m_TagString: green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4136cb967b1a685468428d4b1197c73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  greenDuration: 10
+  pickUpEffect: {fileID: 1891972527774278, guid: 4d35711ba17dcd4409264568d9155360,
+    type: 3}
+  green: {fileID: 2100000, guid: e3eabd79eca1fe843b06ac1d474e3868, type: 2}
+  defaultPlayer: {fileID: 2100000, guid: e64a51e59d590dd4c8048cd801422936, type: 2}
