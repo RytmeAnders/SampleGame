@@ -9,6 +9,8 @@ public class movement : MonoBehaviour
     public Rigidbody rb;
     public float thrust;
 
+    public KeyCode forward, back, left, right;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,22 +25,22 @@ public class movement : MonoBehaviour
 
     private void roll()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(forward))
         {
             rb.AddForce(Vector3.forward * thrust);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(left))
         {
             rb.AddForce(Vector3.left * thrust);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(right))
         {
             rb.AddForce(Vector3.right * thrust);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(back))
         {
             rb.AddForce(Vector3.back * thrust);
         }

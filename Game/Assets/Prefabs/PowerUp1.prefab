@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5703542722562726773}
   - component: {fileID: 7163398307152781203}
   - component: {fileID: 8823904345388066977}
+  - component: {fileID: 5444137256755543377}
   m_Layer: 0
   m_Name: PowerUp1
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982925181824539565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,7 +89,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982925181824539565}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -107,3 +108,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverSpeed: 3
   hoverHeight: 0.2
+--- !u!114 &5444137256755543377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982925181824539565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4136cb967b1a685468428d4b1197c73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
