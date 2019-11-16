@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraSmoother.cs" />
+    <Compile Include="Assets\Hover.cs" />
     <Compile Include="Assets\Scripts\movement.cs" />
+    <Compile Include="Assets\SpawnManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/git/SampleGame/Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
