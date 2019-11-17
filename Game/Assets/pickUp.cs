@@ -14,65 +14,61 @@ public class pickUp : MonoBehaviour
         print("Pickup");
         if(other.CompareTag("Player"))
         {
-            if(gameObject.CompareTag("green"))
-            {
-                Debug.Log("Green picked up !");
-                StartCoroutine(PickUpGreen(other));
-            }
-
-            if (gameObject.CompareTag("red"))
-            {
-                Debug.Log("Red picked up !");
-                StartCoroutine(PickUpRed(other));
-            }
+            StartCoroutine(PickUp(other, gameObject.tag));
         }
     }
 
-    IEnumerator PickUpGreen(Collider player) // Green = You move faster
+    IEnumerator PickUp(Collider player, string tag) // Green = You move faster
     {
-
+        string tagCase = tag;
         movement playermovement = player.GetComponent<movement>();
 
-        // When the effect kicks in
-        playermovement.thrust *= 2;
+        // Effects specific to the prefab
+        switch (tagCase)
+        {
+            case "red":
+                player.transform.localScale *= 3;
+                break;
+            case "green":
+                playermovement.thrust *= 2;
+                break;
+            case "blue":
+                break;
+        }
+
+        // Display the effect on the player
         GameObject effect = Instantiate(pickUpEffect, player.transform.position, Quaternion.identity);
         effect.transform.SetParent(player.transform);
 
+        // Change the material of the player
         player.GetComponent<Renderer>().material = effectMaterial;
         player.tag = "Effected";
 
+        // Disable the pick up prefab
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(Duration);
 
-        // When the effect ends
-        playermovement.thrust /= 2;
-        player.GetComponent<Renderer>().material = defaultPlayer;
+        // Ending the specific effects
+        switch (tagCase)
+        {
+            case "red":
+                player.transform.localScale /= 3;
+                break;
+            case "green":
+                playermovement.thrust /= 2;
+                break;
+            case "blue":
+                break;
+        }
 
+        // Setting the player back to normal
+        player.GetComponent<Renderer>().material = defaultPlayer;
         player.tag = "Player";
+
+        // Removing the effect and the pick up prefab
         Destroy(effect);
         Destroy(gameObject);
-    }
-
-    IEnumerator PickUpRed(Collider player) // Red = You get bigger
-    {
-        // When the effect kicks in
-        player.transform.localScale *= 3;
-        player.GetComponent<Renderer>().material = effectMaterial;
-        player.tag = "Effected";
-
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-
-        yield return new WaitForSeconds(Duration);
-
-        // When the effect ends
-        player.transform.localScale /= 3;
-        player.GetComponent<Renderer>().material = defaultPlayer;
-
-        player.tag = "Player";
-        Destroy(gameObject);
-
     }
 }

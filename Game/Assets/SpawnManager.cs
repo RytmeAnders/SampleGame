@@ -26,18 +26,12 @@ public class SpawnManager : MonoBehaviour
         floorZ = floor.transform.lossyScale.z / 2;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator spawnPowerUp()
     {
         while (true)
         {
             currentTime = Random.Range(minTime, maxTime); //Get a random time to spawn power ups
-            currentPowerUp = (int)Random.Range(0, powerUps.Length-1); //Get a random index of the powerup array
+            currentPowerUp = (int)Random.Range(0, powerUps.Length); //Get a random index of the powerup array
 
             //The positions of the new power up (dependant on floor size)
             spawnX = Random.Range(-floorZ, floorX);
