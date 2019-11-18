@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 10
-  pickUpEffect: {fileID: 159196, guid: 37e803394624a5c48ae5f13fd212ac0b, type: 3}
+  pickUpEffect: {fileID: 1000012560919920, guid: 85a8865d1bf4a63478038fae23776de8,
+    type: 3}
   effectMaterial: {fileID: 2100000, guid: 04dee0af95883814da15e85faa69e7af, type: 2}
-  defaultPlayer: {fileID: 2100000, guid: e64a51e59d590dd4c8048cd801422936, type: 2}
+  defaultPlayer: {fileID: 2100000, guid: e869b2bb0d8eb414bbd2a8c7aed30647, type: 2}

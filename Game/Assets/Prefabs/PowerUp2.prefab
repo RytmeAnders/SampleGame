@@ -124,4 +124,4 @@ MonoBehaviour:
   pickUpEffect: {fileID: 1891972527774278, guid: 4d35711ba17dcd4409264568d9155360,
     type: 3}
   effectMaterial: {fileID: 2100000, guid: e3eabd79eca1fe843b06ac1d474e3868, type: 2}
-  defaultPlayer: {fileID: 2100000, guid: e64a51e59d590dd4c8048cd801422936, type: 2}
+  defaultPlayer: {fileID: 2100000, guid: e869b2bb0d8eb414bbd2a8c7aed30647, type: 2}

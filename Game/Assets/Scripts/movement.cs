@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
+    public bool canMove = true;
     public Rigidbody rb;
     public float thrust;
 
@@ -20,7 +20,10 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        roll();
+        if (canMove)
+        {
+            roll();
+        }
     }
 
     private void roll()

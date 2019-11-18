@@ -8,6 +8,7 @@ TagManager:
   - red
   - Effected
   - blue
+  - Text
   layers:
   - Default
   - TransparentFX

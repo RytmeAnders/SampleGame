@@ -8,6 +8,9 @@ public class pickUp : MonoBehaviour
     public GameObject pickUpEffect;
     public Material effectMaterial;
     public Material defaultPlayer;
+    GameObject effect;
+
+    private bool fireIsActive = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,22 +25,26 @@ public class pickUp : MonoBehaviour
     {
         string tagCase = tag;
         movement playermovement = player.GetComponent<movement>();
+        
 
         // Effects specific to the prefab
         switch (tagCase)
         {
             case "red":
                 player.transform.localScale *= 3;
+                player.GetComponent<Rigidbody>().mass *= 5;
+                playermovement.thrust *= 5;
                 break;
             case "green":
                 playermovement.thrust *= 2;
                 break;
             case "blue":
+                playermovement.canMove = false;
                 break;
         }
 
         // Display the effect on the player
-        GameObject effect = Instantiate(pickUpEffect, player.transform.position, Quaternion.identity);
+        effect = Instantiate(pickUpEffect, player.transform.position, Quaternion.identity);
         effect.transform.SetParent(player.transform);
 
         // Change the material of the player
@@ -55,11 +62,15 @@ public class pickUp : MonoBehaviour
         {
             case "red":
                 player.transform.localScale /= 3;
+                player.GetComponent<Rigidbody>().mass /= 5;
+                playermovement.thrust /= 5;
                 break;
             case "green":
                 playermovement.thrust /= 2;
                 break;
             case "blue":
+                playermovement.canMove = true;
+                fireIsActive = false;
                 break;
         }
 
